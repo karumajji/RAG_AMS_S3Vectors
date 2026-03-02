@@ -41,7 +41,8 @@ See [ARCHITECTURE_DIAGRAM.md](ARCHITECTURE_DIAGRAM.md) for detailed system archi
 ```bash
 # Clone the repository
 git clone <your-repo-url>
-cd AuroraS3VectorProject
+cd RAG_AMS_S3Vectors
+
 
 # Create virtual environment
 python3 -m venv .venv
