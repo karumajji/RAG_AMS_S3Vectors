@@ -194,7 +194,7 @@ DB_HOST = 'your-aurora-endpoint.rds.amazonaws.com'
 DB_PORT = 3306
 DB_NAME = 'rag_system'
 DB_USER = 'master'
-DB_PASSWORD = 'Password1'  # Change in production!
+DB_PASSWORD = 'Passxxxxx'  # Change in production!
 ```
 
 ### AWS Region
