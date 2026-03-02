@@ -9,13 +9,13 @@ import sys
 import random
 
 # AWS Configuration
-COGNITO_USER_POOL_ID = 'us-east-2_FgJYtCR2r'
+COGNITO_USER_POOL_ID = 'us-east-2_Fgxxxx'
 REGION = 'us-east-2'
 
 # Database configuration
 DB_HOST = 'ams-s3-demo-auroracluster-souvtks7ayal.cluster-ctjk2qgb238i.us-east-2.rds.amazonaws.com'
 DB_USER = 'master'
-DB_PASSWORD = 'Password1'
+DB_PASSWORD = 'Passwordxxxx'
 DB_NAME = 'rag_system'
 DB_PORT = 3306
 
@@ -25,19 +25,19 @@ TEST_USERS = [
         "username": "alice@example.com",
         "email": "alice@example.com",
         "name": "Alice Smith",
-        "password": "TempPass123!"
+        "password": "TempPassxxxxx"
     },
     {
         "username": "bob@example.com",
         "email": "bob@example.com",
         "name": "Bob Johnson",
-        "password": "TempPass123!"
+        "password": "TempPassxxxxx"
     },
     {
         "username": "charlie@example.com",
         "email": "charlie@example.com",
         "name": "Charlie Brown",
-        "password": "TempPass123!"
+        "password": "TempPassxxxxx!"
     }
 ]
 
