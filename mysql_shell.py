@@ -8,7 +8,7 @@ import sys
 # Database connection details
 HOST = 'ams-s3-demo-auroracluster-souvtks7ayal.cluster-ctjk2qgb238i.us-east-2.rds.amazonaws.com'
 USER = 'master'
-PASSWORD = 'Password1'
+PASSWORD = 'Passwordxxx'
 DATABASE = 'rag_system'
 PORT = 3306
 
