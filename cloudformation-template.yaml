@@ -1,0 +1,253 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: AWS Permissions-Based RAG System Infrastructure
+
+Parameters:
+
+  DBUsername:
+    Type: String
+    Default: master
+    MinLength: 1
+    MaxLength: 16
+    AllowedPattern: '[a-zA-Z][a-zA-Z0-9]*'
+
+  DBPassword:
+    Type: String
+    Default: Password1
+    NoEcho: true
+    MinLength: 8
+    MaxLength: 41
+    AllowedPattern: '[a-zA-Z0-9]*'
+
+  DBName:
+    Type: String
+    Default: rag_system
+    MinLength: 1
+    MaxLength: 64
+    AllowedPattern: '[a-zA-Z][a-zA-Z0-9_]*'
+
+  CognitoPoolName:
+    Type: String
+    Default: rag-system-users
+
+Resources:
+
+# ============================
+# Networking
+# ============================
+
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
+
+  PublicSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: !Select [0, !GetAZs '']
+      MapPublicIpOnLaunch: true
+
+  PublicSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.0.2.0/24
+      AvailabilityZone: !Select [1, !GetAZs '']
+      MapPublicIpOnLaunch: true
+
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+
+  AttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref VPC
+      InternetGatewayId: !Ref InternetGateway
+
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref VPC
+
+  PublicRoute:
+    Type: AWS::EC2::Route
+    DependsOn: AttachGateway
+    Properties:
+      RouteTableId: !Ref PublicRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
+
+  SubnetRouteTableAssociation1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PublicSubnet1
+      RouteTableId: !Ref PublicRouteTable
+
+  SubnetRouteTableAssociation2:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PublicSubnet2
+      RouteTableId: !Ref PublicRouteTable
+
+# ============================
+# Security
+# ============================
+
+  DBSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Aurora access (PoC only)
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 3306
+          ToPort: 3306
+          CidrIp: 0.0.0.0/0   # ⚠ Lock down for production
+
+# ============================
+# Aurora MySQL
+# ============================
+
+  DBSubnetGroup:
+    Type: AWS::RDS::DBSubnetGroup
+    Properties:
+      DBSubnetGroupDescription: Aurora subnet group
+      SubnetIds:
+        - !Ref PublicSubnet1
+        - !Ref PublicSubnet2
+
+  AuroraCluster:
+    Type: AWS::RDS::DBCluster
+    DeletionPolicy: Delete
+    Properties:
+      Engine: aurora-mysql
+      EngineVersion: "8.0.mysql_aurora.3.12.0"
+      DatabaseName: !Ref DBName
+      MasterUsername: !Ref DBUsername
+      MasterUserPassword: !Ref DBPassword
+      VpcSecurityGroupIds:
+        - !Ref DBSecurityGroup
+      DBSubnetGroupName: !Ref DBSubnetGroup
+      BackupRetentionPeriod: 1
+
+  AuroraInstance:
+    Type: AWS::RDS::DBInstance
+    DeletionPolicy: Delete
+    Properties:
+      DBClusterIdentifier: !Ref AuroraCluster
+      Engine: aurora-mysql
+      DBInstanceClass: db.r8g.large
+      PubliclyAccessible: true   # ⚠ Set false for prod
+
+# ============================
+# S3 Vectors
+# ============================
+
+  VectorStorageBucket:
+    Type: AWS::S3Vectors::VectorBucket
+    DeletionPolicy: Delete
+    Properties:
+      VectorBucketName: !Sub 'ragvec-${AWS::AccountId}'
+
+  VectorIndex:
+    Type: AWS::S3Vectors::Index
+    DependsOn: VectorStorageBucket
+    DeletionPolicy: Delete
+    Properties:
+      VectorBucketName: !Sub 'ragvec-${AWS::AccountId}'
+      IndexName: documents
+      Dimension: 1024
+      DistanceMetric: cosine
+      DataType: float32
+
+# ============================
+# Cognito
+# ============================
+
+  CognitoUserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: !Ref CognitoPoolName
+      AutoVerifiedAttributes:
+        - email
+      UsernameAttributes:
+        - email
+
+  CognitoUserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: rag-system-client
+      UserPoolId: !Ref CognitoUserPool
+      GenerateSecret: false
+      ExplicitAuthFlows:
+        - ALLOW_USER_PASSWORD_AUTH
+        - ALLOW_REFRESH_TOKEN_AUTH
+
+# ============================
+# IAM Role for RAG Agent
+# ============================
+
+  AgentRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ec2.amazonaws.com
+                - lambda.amazonaws.com
+            Action: sts:AssumeRole
+
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/CloudWatchLogsFullAccess
+
+      Policies:
+        - PolicyName: RAGAgentReadOnly
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+
+              - Effect: Allow
+                Action:
+                  - s3vectors:GetVector
+                  - s3vectors:QueryVectors
+                  - s3vectors:ListIndexes
+                  - s3vectors:GetIndex
+                Resource:
+                  - !Sub 'arn:aws:s3vectors:${AWS::Region}:${AWS::AccountId}:bucket/ragvec-${AWS::AccountId}'
+                  - !Sub 'arn:aws:s3vectors:${AWS::Region}:${AWS::AccountId}:bucket/ragvec-${AWS::AccountId}/*'
+
+              - Effect: Allow
+                Action:
+                  - cognito-idp:GetUser
+                  - cognito-idp:AdminGetUser
+                Resource: !GetAtt CognitoUserPool.Arn
+
+# ============================
+# Outputs
+# ============================
+
+Outputs:
+
+  AuroraEndpoint:
+    Value: !GetAtt AuroraCluster.Endpoint.Address
+
+  VectorBucketName:
+    Value: !Sub 'ragvec-${AWS::AccountId}'
+
+  VectorIndexName:
+    Value: documents
+
+  CognitoUserPoolId:
+    Value: !Ref CognitoUserPool
+
+  CognitoUserPoolClientId:
+    Value: !Ref CognitoUserPoolClient
+
+  AgentRoleArn:
+    Value: !GetAtt AgentRole.Arn

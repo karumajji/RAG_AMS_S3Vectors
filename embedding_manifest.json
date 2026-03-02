@@ -1,0 +1,402 @@
+[
+  {
+    "document_id": "doc-001",
+    "title": "Introduction to Machine Learning",
+    "embedding_file": "embeddings/doc-001.bin",
+    "s3_vector_key": "vectors/doc-001.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-002",
+    "title": "Cloud Computing Fundamentals",
+    "embedding_file": "embeddings/doc-002.bin",
+    "s3_vector_key": "vectors/doc-002.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-003",
+    "title": "Cybersecurity Best Practices",
+    "embedding_file": "embeddings/doc-003.bin",
+    "s3_vector_key": "vectors/doc-003.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-004",
+    "title": "Blockchain Technology Overview",
+    "embedding_file": "embeddings/doc-004.bin",
+    "s3_vector_key": "vectors/doc-004.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-005",
+    "title": "Internet of Things Applications",
+    "embedding_file": "embeddings/doc-005.bin",
+    "s3_vector_key": "vectors/doc-005.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-006",
+    "title": "Artificial Intelligence Ethics",
+    "embedding_file": "embeddings/doc-006.bin",
+    "s3_vector_key": "vectors/doc-006.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-007",
+    "title": "Quantum Computing Basics",
+    "embedding_file": "embeddings/doc-007.bin",
+    "s3_vector_key": "vectors/doc-007.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-008",
+    "title": "5G Network Technology",
+    "embedding_file": "embeddings/doc-008.bin",
+    "s3_vector_key": "vectors/doc-008.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-009",
+    "title": "DevOps Methodology",
+    "embedding_file": "embeddings/doc-009.bin",
+    "s3_vector_key": "vectors/doc-009.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-010",
+    "title": "Edge Computing Explained",
+    "embedding_file": "embeddings/doc-010.bin",
+    "s3_vector_key": "vectors/doc-010.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-011",
+    "title": "Climate Change and Global Warming",
+    "embedding_file": "embeddings/doc-011.bin",
+    "s3_vector_key": "vectors/doc-011.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-012",
+    "title": "DNA and Genetic Engineering",
+    "embedding_file": "embeddings/doc-012.bin",
+    "s3_vector_key": "vectors/doc-012.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-013",
+    "title": "Renewable Energy Sources",
+    "embedding_file": "embeddings/doc-013.bin",
+    "s3_vector_key": "vectors/doc-013.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-014",
+    "title": "The Human Brain Structure",
+    "embedding_file": "embeddings/doc-014.bin",
+    "s3_vector_key": "vectors/doc-014.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-015",
+    "title": "Particle Physics Fundamentals",
+    "embedding_file": "embeddings/doc-015.bin",
+    "s3_vector_key": "vectors/doc-015.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-016",
+    "title": "Ocean Ecosystems",
+    "embedding_file": "embeddings/doc-016.bin",
+    "s3_vector_key": "vectors/doc-016.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-017",
+    "title": "Space Exploration History",
+    "embedding_file": "embeddings/doc-017.bin",
+    "s3_vector_key": "vectors/doc-017.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-018",
+    "title": "Evolutionary Biology",
+    "embedding_file": "embeddings/doc-018.bin",
+    "s3_vector_key": "vectors/doc-018.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-019",
+    "title": "Nanotechnology Applications",
+    "embedding_file": "embeddings/doc-019.bin",
+    "s3_vector_key": "vectors/doc-019.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-020",
+    "title": "Neuroscience Research",
+    "embedding_file": "embeddings/doc-020.bin",
+    "s3_vector_key": "vectors/doc-020.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-021",
+    "title": "Digital Marketing Strategies",
+    "embedding_file": "embeddings/doc-021.bin",
+    "s3_vector_key": "vectors/doc-021.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-022",
+    "title": "Supply Chain Management",
+    "embedding_file": "embeddings/doc-022.bin",
+    "s3_vector_key": "vectors/doc-022.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-023",
+    "title": "Financial Planning Basics",
+    "embedding_file": "embeddings/doc-023.bin",
+    "s3_vector_key": "vectors/doc-023.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-024",
+    "title": "Entrepreneurship Guide",
+    "embedding_file": "embeddings/doc-024.bin",
+    "s3_vector_key": "vectors/doc-024.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-025",
+    "title": "Project Management Methodologies",
+    "embedding_file": "embeddings/doc-025.bin",
+    "s3_vector_key": "vectors/doc-025.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-026",
+    "title": "Corporate Social Responsibility",
+    "embedding_file": "embeddings/doc-026.bin",
+    "s3_vector_key": "vectors/doc-026.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-027",
+    "title": "E-commerce Trends",
+    "embedding_file": "embeddings/doc-027.bin",
+    "s3_vector_key": "vectors/doc-027.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-028",
+    "title": "Human Resources Management",
+    "embedding_file": "embeddings/doc-028.bin",
+    "s3_vector_key": "vectors/doc-028.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-029",
+    "title": "Business Analytics",
+    "embedding_file": "embeddings/doc-029.bin",
+    "s3_vector_key": "vectors/doc-029.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-030",
+    "title": "Sustainable Business Practices",
+    "embedding_file": "embeddings/doc-030.bin",
+    "s3_vector_key": "vectors/doc-030.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-031",
+    "title": "Nutrition and Healthy Eating",
+    "embedding_file": "embeddings/doc-031.bin",
+    "s3_vector_key": "vectors/doc-031.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-032",
+    "title": "Mental Health Awareness",
+    "embedding_file": "embeddings/doc-032.bin",
+    "s3_vector_key": "vectors/doc-032.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-033",
+    "title": "Exercise and Fitness",
+    "embedding_file": "embeddings/doc-033.bin",
+    "s3_vector_key": "vectors/doc-033.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-034",
+    "title": "Sleep Science",
+    "embedding_file": "embeddings/doc-034.bin",
+    "s3_vector_key": "vectors/doc-034.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-035",
+    "title": "Preventive Healthcare",
+    "embedding_file": "embeddings/doc-035.bin",
+    "s3_vector_key": "vectors/doc-035.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-036",
+    "title": "Stress Management Techniques",
+    "embedding_file": "embeddings/doc-036.bin",
+    "s3_vector_key": "vectors/doc-036.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-037",
+    "title": "Immunology Basics",
+    "embedding_file": "embeddings/doc-037.bin",
+    "s3_vector_key": "vectors/doc-037.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-038",
+    "title": "Chronic Disease Management",
+    "embedding_file": "embeddings/doc-038.bin",
+    "s3_vector_key": "vectors/doc-038.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-039",
+    "title": "Telemedicine and Digital Health",
+    "embedding_file": "embeddings/doc-039.bin",
+    "s3_vector_key": "vectors/doc-039.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-040",
+    "title": "Public Health Policy",
+    "embedding_file": "embeddings/doc-040.bin",
+    "s3_vector_key": "vectors/doc-040.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-041",
+    "title": "Online Learning Platforms",
+    "embedding_file": "embeddings/doc-041.bin",
+    "s3_vector_key": "vectors/doc-041.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-042",
+    "title": "Educational Technology",
+    "embedding_file": "embeddings/doc-042.bin",
+    "s3_vector_key": "vectors/doc-042.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-043",
+    "title": "STEM Education Importance",
+    "embedding_file": "embeddings/doc-043.bin",
+    "s3_vector_key": "vectors/doc-043.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-044",
+    "title": "Early Childhood Development",
+    "embedding_file": "embeddings/doc-044.bin",
+    "s3_vector_key": "vectors/doc-044.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-045",
+    "title": "Special Education Services",
+    "embedding_file": "embeddings/doc-045.bin",
+    "s3_vector_key": "vectors/doc-045.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-046",
+    "title": "Assessment and Evaluation",
+    "embedding_file": "embeddings/doc-046.bin",
+    "s3_vector_key": "vectors/doc-046.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-047",
+    "title": "Curriculum Development",
+    "embedding_file": "embeddings/doc-047.bin",
+    "s3_vector_key": "vectors/doc-047.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-048",
+    "title": "Student Engagement Strategies",
+    "embedding_file": "embeddings/doc-048.bin",
+    "s3_vector_key": "vectors/doc-048.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-049",
+    "title": "Inclusive Education",
+    "embedding_file": "embeddings/doc-049.bin",
+    "s3_vector_key": "vectors/doc-049.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  },
+  {
+    "document_id": "doc-050",
+    "title": "Lifelong Learning",
+    "embedding_file": "embeddings/doc-050.bin",
+    "s3_vector_key": "vectors/doc-050.bin",
+    "dimension": 768,
+    "model": "sentence-transformers/all-mpnet-base-v2"
+  }
+]
