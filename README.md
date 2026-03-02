@@ -123,7 +123,7 @@ This creates three test users in Cognito and their permission records:
 - **Bob** (bob@example.com): Access to 25 documents (doc-011 to doc-035)
 - **Charlie** (charlie@example.com): Access to 20 documents (doc-031 to doc-050)
 
-All users have password: `TempPass123!`
+All users have password: `TempPassxxx!`
 
 The script also saves user IDs to `test_users.json`.
 
@@ -193,7 +193,7 @@ DB_HOST = 'your-aurora-endpoint.rds.amazonaws.com'
 DB_PORT = 3306
 DB_NAME = 'rag_system'
 DB_USER = 'master'
-DB_PASSWORD = 'Password1'  # Change in production!
+DB_PASSWORD = 'Passxxxxx'  # Change in production!
 ```
 
 ### AWS Region
