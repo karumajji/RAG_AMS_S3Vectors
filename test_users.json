@@ -1,0 +1,27 @@
+{
+  "cognito_user_pool_id": "us-east-2_FgJYtCR2r",
+  "region": "us-east-2",
+  "users": [
+    {
+      "username": "alice@example.com",
+      "email": "alice@example.com",
+      "name": "Alice Smith",
+      "cognito_user_id": "e14b1570-0041-702c-9bab-55614c05a0f0",
+      "password": "TempPass123!"
+    },
+    {
+      "username": "bob@example.com",
+      "email": "bob@example.com",
+      "name": "Bob Johnson",
+      "cognito_user_id": "317b5510-8041-70ef-ce4e-c10fc118df9e",
+      "password": "TempPass123!"
+    },
+    {
+      "username": "charlie@example.com",
+      "email": "charlie@example.com",
+      "name": "Charlie Brown",
+      "cognito_user_id": "c12ba5d0-4071-7019-d5ab-cd465c8be06e",
+      "password": "TempPass123!"
+    }
+  ]
+}
