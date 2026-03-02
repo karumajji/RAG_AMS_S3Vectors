@@ -17,7 +17,7 @@ DB_HOST = 'ams-s3-demo-auroracluster-souvtks7ayal.cluster-ctjk2qgb238i.us-east-2
 DB_PORT = 3306
 DB_NAME = 'rag_system'
 DB_USER = 'master'
-DB_PASSWORD = 'Password1'
+DB_PASSWORD = 'Passwordxxx'
 
 
 def get_user_permissions(cognito_user_id: str) -> Set[str]:
